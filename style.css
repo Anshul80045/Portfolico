@@ -1,0 +1,351 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #4158D0, #e560dc, #ffb374, #ef5f5f, #d849b6);
+    background-size: 400% 400%;
+    animation: bg 12s ease infinite;
+}
+@keyframes bg {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        backround-position: 0% 50%
+    }
+}
+
+
+/* ------------------------------
+   RESET
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(41, 27, 27, 0.8);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    animation: headerDown 0.8s ease forwards;
+}
+
+
+/* ------------------------------
+   NAVBAR
+------------------------------ */
+
+.navbar {
+    width: min(1200px, 92%);
+    min-height: 75px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ------------------------------
+   LOGO
+------------------------------ */
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+
+/* ------------------------------
+   NAV LINKS
+------------------------------ */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ddd;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Animated underline */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: white;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ------------------------------
+   BUTTON
+------------------------------ */
+
+.nav-btn {
+    text-decoration: none;
+
+    color: #111;
+    background: white;
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+
+/* ------------------------------
+   HAMBURGER
+------------------------------ */
+
+.menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    background: white;
+
+    transition: 0.3s ease;
+}
+
+
+/* ------------------------------
+   HERO
+------------------------------ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #aaa;
+}
+
+
+/* ------------------------------
+   HEADER ANIMATION
+------------------------------ */
+
+@keyframes headerDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ------------------------------
+   TABLET
+------------------------------ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-btn {
+        padding: 9px 15px;
+    }
+}
+
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    /* Hide desktop button */
+
+    .nav-btn {
+        display: none;
+    }
+
+    /* Hamburger */
+
+    .menu-btn {
+        display: flex;
+    }
+
+    /* Mobile menu */
+
+    .nav-links {
+        position: absolute;
+
+        top: 65px;
+        left: 4%;
+
+        width: 92%;
+
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        background: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+
+        /* Hidden initially */
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px) scale(0.98);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+
+    /* Open menu */
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0) scale(1);
+    }
+
+
+    /* Hamburger animation */
+
+    .menu-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+}
