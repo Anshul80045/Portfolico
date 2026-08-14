@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book Appointment | Your Name</title>
+
+    <link rel="stylesheet" href="appointment.css">
+
+</head>
+
+
+<body>
+
+    <main class="appointment-page">
+
+
+        <div class="appointment-header">
+
+            <span>LET'S TALK</span>
+
+            <h1>
+                Book an
+                <strong>Appointment.</strong>
+            </h1>
+
+            <p>
+                Tell me a little about your project and I'll get
+                back to you to discuss the next steps.
+            </p>
+
+        </div>
+
+
+
+        <div class="appointment-container">
+
+
+            <form class="appointment-form">
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Selected Service
+                    </label>
+
+                    <select id="service" required>
+
+                        <option value="">
+                            Select a service
+                        </option>
+
+                        <option value="graphic-design">
+                            Graphic Design
+                        </option>
+
+                        <option value="web-development">
+                            Web Development / Full Stack
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label>
+                            Preferred Date
+                        </label>
+
+                        <input
+                            type="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Preferred Time
+                        </label>
+
+                        <input
+                            type="time"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Tell Me About Your Project
+                    </label>
+
+                    <textarea
+                        rows="6"
+                        placeholder="Describe your project, requirements, budget, etc."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="appointment-button"
+                >
+                    Request Appointment
+                    <span>→</span>
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <a
+            href="plans.html"
+            class="back-plans"
+        >
+            ← Back to Plans
+        </a>
+
+    </main>
+
+
+    <script>
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const service =
+            params.get("service");
+
+        const serviceSelect =
+            document.getElementById("service");
+
+
+        if (service === "graphic-design") {
+
+            serviceSelect.value = "graphic-design";
+
+        }
+
+
+        if (service === "web-development") {
+
+            serviceSelect.value = "web-development";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

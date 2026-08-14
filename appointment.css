@@ -1,0 +1,455 @@
+/* =========================================
+   APPOINTMENT PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f5;
+    color: #111;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.appointment-page {
+    min-height: 100vh;
+    padding: 90px 7% 70px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.appointment-header {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.appointment-header > span {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+.appointment-header h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+.appointment-header h1 strong {
+    color: #999;
+}
+
+.appointment-header p {
+    max-width: 580px;
+
+    margin: 22px auto 0;
+
+    color: #6d6d6d;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.appointment-container {
+    position: relative;
+
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 50px;
+
+    background: #fff;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Small top accent */
+
+.appointment-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 80px;
+    height: 3px;
+
+    background: #111;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.appointment-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.input-group label {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    color: #333;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid #dedede;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #fafafa;
+
+    color: #111;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.input-group textarea {
+    min-height: 155px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FOCUS
+========================================= */
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+
+    border-color: #111;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.045);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #aaa;
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.input-group select {
+    cursor: pointer;
+
+    appearance: none;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #777 50%),
+        linear-gradient(135deg, #777 50%, transparent 50%);
+
+    background-position:
+        calc(100% - 19px) 50%,
+        calc(100% - 14px) 50%;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+
+    padding-right: 40px;
+}
+
+
+/* =========================================
+   DATE / TIME
+========================================= */
+
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    color-scheme: light;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.appointment-button {
+
+    width: 100%;
+
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 5px;
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.appointment-button span {
+    font-size: 19px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.appointment-button:hover {
+
+    background: #242424;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.appointment-button:hover span {
+    transform: translateX(6px);
+}
+
+.appointment-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   BACK TO PLANS
+========================================= */
+
+.back-plans {
+
+    display: flex;
+
+    width: fit-content;
+
+    margin: 35px auto 0;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.back-plans:hover {
+
+    color: #111;
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .appointment-page {
+        padding: 75px 5% 60px;
+    }
+
+    .appointment-container {
+        padding: 40px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .appointment-page {
+        padding: 60px 18px 50px;
+    }
+
+    .appointment-header {
+        margin-bottom: 40px;
+    }
+
+    .appointment-header h1 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .appointment-header p {
+        font-size: 14px;
+    }
+
+    .appointment-container {
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .appointment-form {
+        gap: 22px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        padding: 14px;
+    }
+
+    .appointment-button {
+        min-height: 52px;
+    }
+}
